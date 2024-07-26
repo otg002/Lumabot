@@ -19,7 +19,7 @@ stream_handler.setFormatter(formatter)
 logger.addHandler(stream_handler)
 
 # Streamlit UI setup
-st.title("📧 AI Email Assistant")
+st.title("✨Luumabot✨")
 
 # Use st.secrets for sensitive information
 openai_api_key = st.secrets["OPENAI_API_KEY"]
@@ -96,7 +96,7 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
-if prompt := st.chat_input("How can I help with your email?"):
+if prompt := st.chat_input("How shall I embarass you today?"):
     logger.info(f"Received user input: {prompt}")
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
